@@ -6,13 +6,13 @@ define( function( require ) {
 	
 	var MainLayout = Marionette.Layout.extend({
 		template: tmplMainLayout
-		, initialize: function( options ) {
-			this.app = options.app;
-			this.model = options.model;
-		}
 		, className: 'app-container'
 		, regions: {
 			content: '.content'
+		}
+		, initialize: function( options ) {
+			this.app = options.app;
+			this.model = options.model;
 		}
 	});
 

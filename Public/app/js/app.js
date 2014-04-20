@@ -13,12 +13,15 @@ define(function( require ) {
 	var Router           = require( 'app/js/routing/router' );
 	
 	var ApplicationModel = require( 'app/js/models/application' );
+	
 	var MainLayout       = require( 'app/js/views/main-layout' );
+	var HeaderView		 = require( 'app/js/views/header' );
 
 	var app = new Marionette.Application();
 
 	app.addRegions({
 		body: '#body'
+		, header: '#header'
 	});
 
 	app.addInitializer(function() {
@@ -35,6 +38,7 @@ define(function( require ) {
 		});
 
 		app.body.show( app.layout );
+		app.header.show( new HeaderView({ model: app.model }) );
 
 		Backbone.history.start({
 			pushState: false
