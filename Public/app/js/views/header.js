@@ -1,7 +1,7 @@
 define( function( require ) {
 	'use strict';
 
-	var Marionette = require( 'marionette' );
+	var Backbone = require( 'backbone' );
 
 	var HeaderItemView = require( 'app/js/views/header-item' );
 	var tmplHeader = require( 'tmpl!app/templates/header' );
@@ -11,6 +11,9 @@ define( function( require ) {
 		, className: 'header'
 		, itemView: HeaderItemView
 		, itemViewContainer: '.nav'
+		, initialize: function( options ) {
+			this.collection = options.collection || new Backbone.Collection()
+		}
 	});
 
 	return HeaderView;
