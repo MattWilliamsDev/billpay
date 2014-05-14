@@ -5,7 +5,7 @@ define( function( require ) {
 	
 	var Router = Marionette.AppRouter.extend({
 		appRoutes: {
-			'': 'index'
+			'(/)(:view)': 'index'
 		}
 	});
 

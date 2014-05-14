@@ -3,34 +3,35 @@ requirejs.config({
 	waitSeconds: 60,
 	paths: {
 		// APP PATHS
-		app: 'app',
+		app: 'app'
 		
 		// VENDOR PATHS (just to show you exactly what we have set up)
-		backbone: 'bower_components/backbone/backbone',
-		underscore: 'bower_components/underscore/underscore',
-		jquery: 'bower_components/jquery/dist/jquery',
-		json2: 'bower_components/json2/json2',
-		marionette: 'bower_components/backbone.marionette/lib/core/amd/backbone.marionette',
-		'backbone.wreqr': 'bower_components/backbone.wreqr/lib/amd/backbone.wreqr',
-		'backbone.babysitter': 'bower_components/backbone.babysitter/lib/amd/backbone.babysitter',
-		text: 'bower_components/requirejs-text/text',
-		handlebars: 'bower_components/handlebars/handlebars',
-		moment: 'bower_components/moment/min/moment-with-langs',
-		bootstrapjs: 'bower_components/bootstrap/dist/js/bootstrap.min',
-		tmpl: 'utilities/tmpl'
+		, backbone: 'bower_components/backbone/backbone'
+		, 'backbone.wreqr': 'bower_components/backbone.wreqr/lib/amd/backbone.wreqr'
+		, 'backbone.babysitter': 'bower_components/backbone.babysitter/lib/amd/backbone.babysitter'
+		, localStorage: 'bower_components/Backbone.localStorage/backbone.localStorage-min'
+		, underscore: 'bower_components/underscore/underscore'
+		, jquery: 'bower_components/jquery/dist/jquery'
+		, json2: 'bower_components/json2/json2'
+		, marionette: 'bower_components/backbone.marionette/lib/core/amd/backbone.marionette'
+		, text: 'bower_components/requirejs-text/text'
+		, handlebars: 'bower_components/handlebars/handlebars'
+		, moment: 'bower_components/moment/min/moment-with-langs'
+		, bootstrapjs: 'bower_components/bootstrap/dist/js/bootstrap.min'
+		, tmpl: 'utilities/tmpl'
 	},
 	shim: {
 		'backbone': {
 			deps: [ 'underscore', 'jquery', 'json2' ],
 			exports: 'Backbone'
-		},
-		'jquery': {
+		}
+		, 'jquery': {
 			exports: '$'
-		},
-		'handlebars': {
+		}
+		, 'handlebars': {
 			exports: 'Handlebars'
-		},
-		'bootstrapjs': {
+		}
+		, 'bootstrapjs': {
 			deps: [ 'jquery' ]
 		}
 	}

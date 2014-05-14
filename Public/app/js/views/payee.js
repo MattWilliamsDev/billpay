@@ -8,6 +8,8 @@ define( function( require ) {
 	
 	var PayeeView = Marionette.CompositeView.extend({
 		template: tmplPayee
+		, tagName: 'dt'
+		, className: 'payment-list'
 		, itemView: PaymentView
 		, itemViewContainer: '.payments'
 		, ui: {
@@ -17,7 +19,7 @@ define( function( require ) {
 			'click @ui.addPayment': 'addPayment'
 		}
 		, initialize: function( options ) {
-			this.collection = options.collection || new Backbone.Collection();
+			this.collection = options.collection || options.payments || new Backbone.Collection();
 			this.model = options.model;
 		}
 	});

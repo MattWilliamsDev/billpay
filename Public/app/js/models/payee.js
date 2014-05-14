@@ -9,6 +9,7 @@ define( function( require ) {
 			, account: null
 			, weblink: 'Web Pay URL'
 			, username: 'username'
+			, payments: []
 		}
 	});
 

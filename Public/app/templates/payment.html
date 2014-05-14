@@ -1,3 +1,57 @@
-<div class="row">
-	<div class="col-md-12"></div>
-</div>
+<td>
+	<div class="form-group">
+		<label for="payment-name">Name</label>
+		<input type="text" placeholder="Enter Payment Name" value="{{ name }}" name="payment-name" id="payment-{{ id }}" class="form-control payment-name"{{^ if editable }} disabled{{/ if }}>
+	</div>
+</td>
+
+<td>
+	<div class="form-group">
+		<label for="payment-amount">Amount</label>
+		<div class="input-group">
+			<div class="input-group-addon">$</div>
+			<input type="text" class="form-control payment-amount" name="payment-amount" placeholder="Payment Amount" value="{{ amount }}"{{^ if editable }} disabled{{/ if }}>
+		</div>
+	</div>
+</td>
+
+<td>
+	<div class="form-group">
+		<label for="due-date">Due Date</label>
+		<input type="date" class="form-control payment-due-date" name="due-date" placeholder="Due Date" value="{{ dueDate }}"{{^ if editable }} disabled{{/ if }}>
+	</div>
+</td>
+
+<td>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox"{{# if isRecurring }} checked{{/ if }} class="is-recurring"> Is Recurring?
+		</label>
+	</div>
+
+	{{# if isRecurring }}
+	<div class="recurrence">
+		<div class="form-group">
+			<label for="count">How many times?</label>
+			<input type="number" name="count" class="form-control count" placeholder="How many recurrences?">
+		</div>
+
+		<div class="form-group">
+			<label for="frequency">How often?</label>
+			<select name="frequency" class="form-control frequency">
+				{{# each frequencyOptions }}
+				<option value="{{ . }}">{{ . }}</option>
+				{{/ each }}
+			</select>
+		</div>
+	</div>
+	{{/ if }}
+</td>
+
+<td>
+	{{# if editable }}
+	<button class="btn btn-primary save">Save</button>
+	{{ else }}
+	<button class="btn edit">Edit</button>
+	{{/ if }}
+</td>

@@ -7,6 +7,7 @@ define(function( require ) {
 	var Backbone         = require( 'backbone' );
 	var Marionette       = require( 'marionette' );
 	var Bootstrap		 = require( 'bootstrapjs' );
+	var Handlebars		 = require( 'handlebars' );
 	
 	// App
 	var Controller       = require( 'app/js/routing/controller' );
@@ -24,7 +25,7 @@ define(function( require ) {
 		, header: '#header'
 	});
 
-	app.addInitializer(function() {
+	app.addInitializer( function() {
 		// Create the router
 		app.router = new Router({
 			controller: new Controller( app )
@@ -45,6 +46,14 @@ define(function( require ) {
 			, root: '/'
 		});
 	});
+
+	Handlebars.registerHelper( 'fmtMoment', function( date, format ) {
+		return date && date.format && date.format( format ) || '';
+	});
+
+	window.billpay = {
+		app: app
+	};
 
 	return app;
 });

@@ -8,8 +8,8 @@ define( function( require ) {
 	var PayeesView = Marionette.CollectionView.extend({
 		template: tmplPayees
 		, itemView: PayeeView
-		, itemViewContainer: '.payee'
+		, itemViewContainer: '.payees-list'
 	});
 
-	return Payees;
+	return PayeesView;
 } );

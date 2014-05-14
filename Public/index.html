@@ -18,6 +18,37 @@
 		<header id="header" class="navbar navbar-default navbar-fixed-top" role="navigation"></header>
 
 		<div id="body"></div>
+
+		<script id="default-data">
+			window.getTempData = function() {
+				return {
+					data: [
+						{
+							payee: 'Spotify'
+							, name: 'Spotify Premium'
+							, dueDate: '2014-04-15'
+							, amount: 9.99
+							, isRecurring: true
+							, frequency: 'monthly'
+							, repeat: 999
+							, weblink: 'auto'
+							, username: 'bleacherbum17'
+						}
+						, {
+							payee: 'Netflix'
+							, name: 'Membership'
+							, dueDate: '2014-04-15'
+							, amount: 7.99
+							, isRecurring: true
+							, frequency: 'monthly'
+							, repeat: 999
+							, weblink: 'auto'
+							, username: 'bleacherbum17'
+						}
+					]
+				}
+			}
+		</script>
 		
 		<script src="bower_components/requirejs/require.js" data-main="app/js/app-start"></script>
 	</body>

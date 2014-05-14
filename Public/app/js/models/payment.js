@@ -7,11 +7,15 @@ define( function( require ) {
 	
 	var Payment = BaseModel.extend({
 		defaults: {
-			dueDate: moment()
-			, amount: 0
+			name: 'New Payment'
+			, payeeId: 0
+			, payee: 'Payee Name'
+			, dueDate: moment()
+			, amount: 0.00
 			, isRecurring: false
 			, frequency: 'once'
 			, repeat: 0
+			, editable: false
 		}
 	});
 
